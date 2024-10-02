@@ -11,6 +11,10 @@ This project implements a Linux kernel module that lists all current tasks in th
 
 ## Usage
 1. Load the module:
-2. View task output:  
-3. Remove the module:
+    ```bash
 
+2. View task output:  
+    ```bash
+
+3. Remove the module:
+    ```bash
