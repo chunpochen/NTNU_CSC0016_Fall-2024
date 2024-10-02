@@ -20,4 +20,4 @@ This project implements a Linux kernel module that lists all current tasks in th
    
 3. Remove the module:
   ```bash
-  sudo rmmod XXX.ko
+   sudo rmmod XXX.ko
