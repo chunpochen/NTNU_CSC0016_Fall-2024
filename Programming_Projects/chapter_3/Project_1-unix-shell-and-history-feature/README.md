@@ -11,7 +11,7 @@ In this part, we implement a basic UNIX shell that:
 4. In the child process, executes the command using `execvp()`.
 5. Supports both foreground and background execution. Commands followed by `&` are executed in the background, and the shell does not wait for their completion.
 
-### Key Features:
+### Features:
 - **Command Execution**: The shell can execute basic UNIX commands like `ls`, `pwd`, and more.
 - **Background Execution**: By appending `&` at the end of a command, the shell will execute the command in the background without waiting for it to finish.
 - **Exiting the Shell**: The shell continues running until the user types `exit`.
@@ -23,7 +23,7 @@ In this part, we extend the shell to maintain a history of the most recent comma
 2. Allow users to view the command history by typing `history`.
 3. Support re-execution of the most recent command using `!!` and re-execution of a specific command using `!N`, where `N` is the command number in the history.
 
-### Key Features:
+### Features:
 - **Command History**: The shell stores up to 10 of the most recent commands.
 - **Re-execution**: 
   - Use `!!` to execute the most recent command.
