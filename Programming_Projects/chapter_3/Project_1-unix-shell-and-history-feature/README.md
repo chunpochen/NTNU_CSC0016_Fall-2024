@@ -29,9 +29,3 @@ In this part, we extend the shell to maintain a history of the most recent comma
   - Use `!!` to execute the most recent command.
   - Use `!N` to execute the `N`th command from the history.
 - **History Management**: The shell correctly handles edge cases, such as when there is no history or when an invalid command number is entered.
-
-## How to Run
-
-1. Compile the program:
-   ```bash
-   gcc -o shell shell.c
