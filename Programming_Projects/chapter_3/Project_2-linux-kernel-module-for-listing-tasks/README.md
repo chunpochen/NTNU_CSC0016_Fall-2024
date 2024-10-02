@@ -12,7 +12,7 @@ This project implements a Linux kernel module that lists all current tasks in th
 ## Usage
 1. Load the module:
     ```bash
-    sudo insmod list_tasks.ko
+    sudo insmod XXX.ko
 
 2. View task output:  
     ```bash
