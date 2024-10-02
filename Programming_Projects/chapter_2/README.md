@@ -1,59 +1,15 @@
-# Linux 核心模組專案
+# Linux Kernel Module Project
 
-## 專案概述
+## Project Overview
 
-這個專案旨在教授如何開發與管理 Linux 核心模組，以及如何在核心層次使用資料結構（例如鏈結串列）。專案分為兩個主要部分：
+This project consists of two main parts, both focused on developing and managing Linux kernel modules. The aim is to provide an understanding of how kernel modules are created, loaded, and managed in the Linux environment. Additionally, it will explore how to manipulate kernel data structures, specifically linked lists, within a kernel module.
 
-### 第一部分 — 建立核心模組
+### Part I — Creating a Kernel Module
 
-第一部分的重點在於建立一個簡單的 Linux 核心模組。核心模組是一段可以動態載入到核心中，用來擴展核心功能的程式碼，無需重新編譯或重啟整個系統。
+In this part, you will learn how to create a simple Linux kernel module that outputs messages when it is loaded and unloaded. You will also explore how to compile, insert, and remove the module from the kernel. Basic kernel commands such as `insmod`, `rmmod`, and `dmesg` will be used to interact with the module and check kernel log messages.
 
-在這部分中，你將會：
-- 建立一個簡單的核心模組，當模組被載入和移除時會輸出日誌訊息。這些訊息會記錄在核心的日誌緩衝區中，可以透過 `dmesg` 命令來檢視。
-- 使用 `insmod` 指令將編譯好的模組載入到運行中的 Linux 核心中，並使用 `rmmod` 指令將其移除。
-- 本部分的目的是讓你熟悉如何與 Linux 核心模組進行互動，包括模組的載入、卸載，及在核心環境中記錄模組的活動。
+### Part II — Kernel Data Structures
 
-完成本部分後，你將學到：
-- 如何撰寫一個核心模組。
-- 使用提供的 `Makefile` 來編譯模組。
-- 使用指令將模組載入和卸載到 Linux 核心。
-- 使用 `dmesg` 命令來檢視與模組相關的核心日誌訊息。
+In the second part of the project, the kernel module will be expanded to use a linked list data structure. You will define a custom structure containing information (such as a birthday) and use Linux's `list_head` to manage a circular doubly-linked list. You will implement functions to insert elements into the list, traverse the list, and safely delete elements, ensuring memory is properly freed. The linked list will be manipulated using kernel macros and functions such as `list_for_each_entry` and `list_del`.
 
-這部分作為核心模組生命週期的介紹，並提供了如何以模組化的方式擴展核心功能的概念。
-
-### 第二部分 — 核心資料結構（鏈結串列的實作）
-
-專案的第二部分基於第一部分進行擴展，介紹如何在核心模組中操作資料結構，尤其是鏈結串列。
-
-在這部分中，你將會：
-- 修改你在第一部分建立的核心模組，並使用 Linux 核心內建的 `list_head` 結構來管理一個循環的雙向鏈結串列。這是 Linux 核心中常見的資料結構，提供了高效的節點管理方式。
-- 你將會定義一個 `birthday` 結構來儲存節點的資料，例如日期（生日資訊），並將這些節點連接到鏈結串列中。
-- 你將實作函數來插入鏈結串列中的節點，遍歷鏈結串列，並且最終移除節點，同時釋放記憶體以避免記憶體洩漏。
-
-你將實作以下操作：
-- **插入**：你會使用 `kmalloc()` 來動態分配記憶體，並透過 `list_add_tail()` 宏將新節點加入到鏈結串列中。
-- **遍歷**：使用 `list_for_each_entry()` 宏來遍歷鏈結串列，並將每個節點的內容輸出到核心日誌中，確保資料正確被儲存和操作。
-- **刪除**：使用 `list_del()` 宏來從鏈結串列中移除節點，並使用 `kfree()` 來釋放記憶體，以防止記憶體洩漏。
-
-完成本部分後，你將學到：
-- 如何使用核心的宏來在核心空間中操作鏈結串列。
-- 動態記憶體分配與釋放在核心模組中的操作方式。
-- 如何透過正確的記憶體管理來避免記憶體洩漏，這對於開發核心層級的程式至關重要。
-
-### 主要學習目標
-
-通過本專案，你將能夠：
-1. **熟悉核心模組**：掌握撰寫、載入與移除 Linux 核心模組的基本操作。
-2. **理解核心日誌機制**：學習如何使用 `printk()` 進行核心日誌輸出，並使用 `dmesg` 檢視日誌內容。
-3. **實作核心資料結構**：瞭解如何在核心模組中操作鏈結串列，這是許多核心子系統中廣泛使用的資料結構。
-4. **核心中的記憶體管理**：掌握如何在核心空間中進行動態記憶體的分配與釋放，並防止記憶體洩漏。
-
-### 常用命令與工具總結
-
-在整個專案過程中，你將使用以下指令與工具：
-- `insmod`：將你的核心模組載入到正在運行的 Linux 核心。
-- `rmmod`：從核心中移除你的模組。
-- `dmesg`：檢視核心日誌與訊息，確認模組的操作狀態。
-- 核心程式設計工具，包括 `kmalloc()` 來分配記憶體，以及 `kfree()` 來釋放記憶體。
-
-完成此專案後，你將對 Linux 核心模組有基礎的理解，並學會如何使用它們來擴展核心功能，以及如何在核心環境中管理複雜的資料結構。
+The goal of this part is to enhance your understanding of how kernel modules can manage complex data structures and interact with the system's memory management.
