@@ -55,5 +55,3 @@ Throughout this project, you will use the following commands and tools:
 - `rmmod`: To remove your module from the kernel.
 - `dmesg`: To view kernel logs and messages, including the ones printed by your module.
 - Kernel programming tools, including `kmalloc()` for memory allocation and `kfree()` for memory deallocation.
-
-By completing this project, you will gain a foundational understanding of Linux kernel modules, how they can be used to extend the functionality of the kernel, and how to manage complex data structures within the kernel environment.
