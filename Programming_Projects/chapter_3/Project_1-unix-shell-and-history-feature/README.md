@@ -2,7 +2,7 @@
 
 This project involves creating a simple UNIX shell that can execute basic commands and store a history of previously executed commands. The project is divided into two parts:
 
-## Part I — Creating a Simple Shell
+## Part I — Creating a Child Process
 
 In this part, we implement a basic UNIX shell that:
 1. Reads user input from the command line.
@@ -16,7 +16,7 @@ In this part, we implement a basic UNIX shell that:
 - **Background Execution**: By appending `&` at the end of a command, the shell will execute the command in the background without waiting for it to finish.
 - **Exiting the Shell**: The shell continues running until the user types `exit`.
 
-## Part II — Adding a History Feature
+## Part II — Creating a History Feature
 
 In this part, we extend the shell to maintain a history of the most recent commands. The shell will:
 1. Store the last 10 commands entered by the user.
