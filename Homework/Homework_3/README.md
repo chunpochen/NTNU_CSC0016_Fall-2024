@@ -17,10 +17,16 @@ struct prinfo {
 };
 ```
 
-### Project Requirements
+## Project Requirements
 
 - Implementation Steps: Sequentially record steps taken to implement the system call, including any modified files or code changes.
 - Demonstration: Run the test program in user space under two different shells, and capture the output showing process information for each shell.
 - Comments and Challenges: Document any challenges encountered during implementation and describe the solutions.
 - References and Code: List any references used and include the full code in the appendix with a compact format.
 
+## Tips
+
+1. The implementations of the system calls `getuid()` and `getpid()` in the file `kernel/timer.c` can provide some guidance.
+2. Almost all of the process information needed to fill in the `prinfo` structure can be found in the structure `task_struct`, defined in the file `include/linux/sched.h`.
+3. The kernel file `include/asm/current.h` defines an inline function that returns the address of the `task_struct` of the current process.
+4. Every system call must check the validity of arguments passed by a caller. The Linux kernel provides two functions, `copy_from_user()` and `copy_to_user()`, which not only check validity but also transfer information between kernel and user levels. Use them to move the process information.
