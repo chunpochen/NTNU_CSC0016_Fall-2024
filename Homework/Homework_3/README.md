@@ -18,3 +18,9 @@ struct prinfo {
 ```
 
 ### Project Requirements
+
+- Implementation Steps: Sequentially record steps taken to implement the system call, including any modified files or code changes.
+- Demonstration: Run the test program in user space under two different shells, and capture the output showing process information for each shell.
+- Comments and Challenges: Document any challenges encountered during implementation and describe the solutions.
+- References and Code: List any references used and include the full code in the appendix with a compact format.
+
