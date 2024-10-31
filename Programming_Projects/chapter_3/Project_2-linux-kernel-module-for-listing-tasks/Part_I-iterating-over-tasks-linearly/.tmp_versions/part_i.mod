@@ -1,3 +1,0 @@
-/home/m11207521/Desktop/Programming_Projects/chapter_3/Project_2-linux-kernel-module-for-listing-tasks/Part_I-iterating-over-tasks-linearly/part_i.ko
-/home/m11207521/Desktop/Programming_Projects/chapter_3/Project_2-linux-kernel-module-for-listing-tasks/Part_I-iterating-over-tasks-linearly/part_i.o
-
